@@ -7,7 +7,7 @@ function App() {
       <div className="container">
         <h1>me-weather🌥</h1>
         <Weather />
-        <button className="btn btn-primary">hello</button>
+
         <footer>
           This project is coded bay Mehtap Tataroğlu and is{" "}
           <a

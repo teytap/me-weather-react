@@ -1,3 +1,28 @@
 .Weather {
-  color: blueviolet;
+  color: grey;
+  border: 1px solid grey;
+  border-radius: 3px;
+  padding: 10px;
+}
+
+li {
+  list-style: none;
+}
+.Weather ul {
+  padding: 0;
+  margin: 0;
+}
+h1 {
+  margin: 20px 0px 0px 0px;
+}
+.Weather .temperature {
+  font-size: 60px;
+  line-height: 64px;
+}
+.Weather .unit {
+  font-size: 16px;
+  font-weight: 500;
+  position: relative;
+  top: -30px;
+  margin-left: 5px;
 }
