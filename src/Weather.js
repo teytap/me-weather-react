@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import NewDate from "./NewDate";
 import "./Weather.css";
 export default function Weather() {
   let [weatherData, setWeatherData] = useState(null);
@@ -13,7 +14,7 @@ export default function Weather() {
       description: response.data.weather[0].description,
       city: response.data.name,
       iconUrl: "#",
-      date: "Wednesday, 07:00",
+      date: new Date(response.data.dt * 1000),
     });
 
     console.log(response.data);
@@ -46,7 +47,9 @@ export default function Weather() {
         </form>
         <h1>{weatherData.city}</h1>
         <ul>
-          <li>{weatherData.date}</li>
+          <li>
+            <NewDate date={weatherData.date} />
+          </li>
           <li className="text-capitalize">{weatherData.description}</li>
         </ul>
         <div className="row">
