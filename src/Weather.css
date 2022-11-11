@@ -32,3 +32,9 @@ h1 {
 .btn-branding {
   background: #49a4b8;
 }
+.Weather canvas {
+  margin-right: 10px;
+  height: 64px;
+  width: 64px;
+  margin-top: 5px;
+}
