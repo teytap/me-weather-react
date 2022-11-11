@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import axios from "axios";
 import NewDate from "./NewDate";
 import "./Weather.css";
-export default function Weather() {
+
+export default function Weather(props) {
   let [weatherData, setWeatherData] = useState(null);
+  let [city, setCity] = useState(props.city);
   let [ready, setReady] = useState(false);
 
   function showWeather(response) {
@@ -20,17 +22,29 @@ export default function Weather() {
     console.log(response.data);
     setReady(true);
   }
-
+  function searchCityWeather() {
+    let apiKey = "1223d92fc1f5a88dccf0859beb3b3425";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(showWeather);
+  }
+  function submitCity(event) {
+    event.preventDefault();
+    searchCityWeather();
+  }
+  function changeCity(event) {
+    setCity(event.target.value);
+  }
   if (ready) {
     return (
       <div className="Weather">
-        <form>
+        <form onSubmit={submitCity}>
           <div className="row">
             <div className="col-6">
               <input
                 type="search"
                 placeholder="Type a city.."
                 class="form-control"
+                onChange={changeCity}
               ></input>
             </div>
             <div className="col-3">
@@ -78,11 +92,7 @@ export default function Weather() {
       </div>
     );
   } else {
-    //const apiKey = "ta54a851ba838f3efeo0560843fba113";
-    let city = "Ankara";
-    let apiKey = "1223d92fc1f5a88dccf0859beb3b3425";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(showWeather);
+    searchCityWeather();
     return <p>Loading..</p>;
   }
 }

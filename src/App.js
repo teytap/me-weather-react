@@ -1,13 +1,12 @@
 import "./App.css";
 import Weather from "./Weather";
-import NewDate from "./NewDate";
 
 function App() {
   return (
     <div className="App">
       <div className="container">
         <h1>me-weather🌥</h1>
-        <Weather />
+        <Weather city="Ankara" />
 
         <footer>
           This project is coded bay Mehtap Tataroğlu and is{" "}
