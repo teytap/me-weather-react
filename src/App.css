@@ -6,3 +6,11 @@
 .App footer {
   font-size: 12px;
 }
+body {
+  background-image: url("https://rare-gallery.com/uploads/posts/5306315-mountain-blue-teal-range-mountain-range-layers-amazing-wallpaper-desktop-wallpaper-desktop-background-monochrome-layer-shape-minimalist-minimal-wallpaper-silhouette-light-shadow-landscape-natu.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.brand {
+  color: rgb(27, 134, 248);
+}

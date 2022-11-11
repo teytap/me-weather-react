@@ -1,20 +1,10 @@
 .Weather {
   color: white;
-  border: 1px solid white;
-  border-radius: 3px;
-  padding: 10px;
-  background: linear-gradient(
-    179.1deg,
-    rgb(247, 238, 238) -1.9%,
-    rgb(247, 202, 201) 44.9%,
-    rgb(145, 168, 208) 96.1%
-  );
-  background: linear-gradient(
-    179.4deg,
-    rgb(12, 20, 69) -16.9%,
-    rgb(71, 30, 84) 119.9%
-  );
-  opacity: 0.8;
+  border-radius: 10px;
+  padding: 16px;
+  background: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+  opacity: 0.7;
+  margin: 30px 0px;
 }
 
 li {
@@ -26,6 +16,7 @@ li {
 }
 h1 {
   margin: 20px 0px 0px 0px;
+  padding-top: 20px;
 }
 .Weather .temperature {
   font-size: 60px;
@@ -37,4 +28,7 @@ h1 {
   position: relative;
   top: -30px;
   margin-left: 5px;
+}
+.btn-branding {
+  background: #49a4b8;
 }

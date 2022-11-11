@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <h1>me-weather🌥</h1>
+        <h1 className="brand">me-weather🌥</h1>
         <Weather city="Ankara" />
 
         <footer>
