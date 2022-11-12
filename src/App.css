@@ -14,3 +14,7 @@ body {
 .brand {
   color: rgb(27, 134, 248);
 }
+.App a {
+  text-decoration: none;
+  color: aquamarine;
+}
