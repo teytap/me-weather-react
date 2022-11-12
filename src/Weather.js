@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import NewDate from "./NewDate";
 import WeatherIcon from "./WeatherIcon";
+import WeatherTemperature from "./WeatherTemperature";
 
 import "./Weather.css";
 
@@ -12,7 +13,7 @@ export default function Weather(props) {
 
   function showWeather(response) {
     setWeatherData({
-      temperature: Math.round(response.data.main.temp),
+      temperature: response.data.main.temp,
       humidity: Math.round(response.data.main.humidity),
       wind: Math.round(response.data.wind.speed),
       description: response.data.weather[0].description,
@@ -68,7 +69,6 @@ export default function Weather(props) {
           </li>
           <li className="text-capitalize">{weatherData.description}</li>
         </ul>
-        <div className="row">
         <div className="row mt-4">
           <div className="col-6">
             <div className="clearfix d-flex">
@@ -80,8 +80,7 @@ export default function Weather(props) {
               </div>
 
               <div className="float-left">
-                <span className="temperature">{weatherData.temperature}</span>
-                <span className="unit">°C</span>
+                <WeatherTemperature celcius={weatherData.temperature} />
               </div>
             </div>
           </div>
@@ -97,6 +96,6 @@ export default function Weather(props) {
     );
   } else {
     searchCityWeather();
-    return <p>Loading..</p>;
+    return "<p>Loading..</p>";
   }
 }
