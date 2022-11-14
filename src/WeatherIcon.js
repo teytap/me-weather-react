@@ -23,15 +23,10 @@ export default function WeatherIcon(props) {
     "50n": "FOG",
   };
   return (
-    /* <img
-      src="https://www.npmjs.com/package/react-animated-weather"
-      alt={props.alt}
-    ></img>*/
-
     <ReactAnimatedWeather
       icon={codeMapping[props.code]}
       color="white"
-      size={50}
+      size={props.size}
       animate={true}
     />
   );

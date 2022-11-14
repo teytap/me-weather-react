@@ -3,6 +3,7 @@ import axios from "axios";
 import NewDate from "./NewDate";
 import WeatherIcon from "./WeatherIcon";
 import WeatherTemperature from "./WeatherTemperature";
+import WeatherForecast from "./WeatherForecast";
 
 import "./Weather.css";
 
@@ -76,6 +77,7 @@ export default function Weather(props) {
                 <WeatherIcon
                   code={weatherData.icon}
                   alt={weatherData.description}
+                  size={52}
                 />
               </div>
 
@@ -92,6 +94,7 @@ export default function Weather(props) {
             </ul>
           </div>
         </div>
+        <WeatherForecast size={56} />
       </div>
     );
   } else {

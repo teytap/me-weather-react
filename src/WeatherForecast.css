@@ -1,0 +1,9 @@
+.Weatherforecast {
+  text-align: center;
+}
+.Weatherforecast .forecast-max {
+  font-weight: 700;
+}
+.Weatherforecast .forecast-day {
+  font-weight: 700;
+}
