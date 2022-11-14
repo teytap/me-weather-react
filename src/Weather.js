@@ -21,6 +21,7 @@ export default function Weather(props) {
       city: response.data.name,
       icon: response.data.weather[0].icon,
       date: new Date(response.data.dt * 1000),
+      coordinates: response.data.coord,
     });
 
     console.log(response.data);
@@ -77,7 +78,7 @@ export default function Weather(props) {
                 <WeatherIcon
                   code={weatherData.icon}
                   alt={weatherData.description}
-                  size={52}
+                  size={56}
                 />
               </div>
 
@@ -94,7 +95,7 @@ export default function Weather(props) {
             </ul>
           </div>
         </div>
-        <WeatherForecast size={56} />
+        <WeatherForecast size={56} coordinates={weatherData.coordinates} />
       </div>
     );
   } else {
