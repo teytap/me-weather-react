@@ -4,6 +4,7 @@ import NewDate from "./NewDate";
 import WeatherIcon from "./WeatherIcon";
 import WeatherTemperature from "./WeatherTemperature";
 import WeatherForecast from "./WeatherForecast";
+import { Oval } from "react-loader-spinner";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWind } from "@fortawesome/free-solid-svg-icons";
 import { faDroplet } from "@fortawesome/free-solid-svg-icons";
@@ -107,6 +108,19 @@ export default function Weather(props) {
     );
   } else {
     searchCityWeather();
-    return "<p>Loading..</p>";
+    return (
+      <Oval
+        height={60}
+        width={60}
+        color="white"
+        wrapperStyle={{}}
+        wrapperClass=""
+        visible={true}
+        ariaLabel="oval-loading"
+        secondaryColor="white"
+        strokeWidth={4}
+        strokeWidthSecondary={4}
+      />
+    );
   }
 }
