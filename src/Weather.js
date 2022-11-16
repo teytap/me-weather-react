@@ -78,7 +78,7 @@ export default function Weather(props) {
                 <WeatherIcon
                   code={weatherData.icon}
                   alt={weatherData.description}
-                  size={56}
+                  size={100}
                 />
               </div>
 
@@ -95,7 +95,7 @@ export default function Weather(props) {
             </ul>
           </div>
         </div>
-        <WeatherForecast size={56} coordinates={weatherData.coordinates} />
+        <WeatherForecast size={100} coordinates={weatherData.coordinates} />
       </div>
     );
   } else {

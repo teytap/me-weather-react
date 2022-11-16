@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./WeatherForecast.css";
 import WeatherForecastDay from "./WeatherForecastDay";
 import axios from "axios";
@@ -11,11 +11,14 @@ export default function WeatherForecast(props) {
     setLoaded(true);
     setForecastData(response.data.daily);
   }
+  useEffect(() => {
+    setLoaded(false);
+  }, [props.coordinates]);
 
   if (loaded) {
     return (
       <div className="Weatherforecast">
-        <div className="row">
+        <div className="row d-flex justify-content-between">
           {forecastData.map(function (element, index) {
             if (index < 5) {
               return (
@@ -23,6 +26,8 @@ export default function WeatherForecast(props) {
                   <WeatherForecastDay data={element} />
                 </div>
               );
+            } else {
+              return null;
             }
           })}
         </div>
