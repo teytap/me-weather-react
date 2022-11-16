@@ -18,7 +18,7 @@ export default function WeatherForecast(props) {
   if (loaded) {
     return (
       <div className="Weatherforecast">
-        <div className="row d-flex justify-content-between">
+        <div className="row">
           {forecastData.map(function (element, index) {
             if (index < 5) {
               return (

@@ -4,6 +4,7 @@ import NewDate from "./NewDate";
 import WeatherIcon from "./WeatherIcon";
 import WeatherTemperature from "./WeatherTemperature";
 import WeatherForecast from "./WeatherForecast";
+//import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 
 import "./Weather.css";
 
@@ -78,7 +79,7 @@ export default function Weather(props) {
                 <WeatherIcon
                   code={weatherData.icon}
                   alt={weatherData.description}
-                  size={100}
+                  size={72}
                 />
               </div>
 
@@ -95,7 +96,7 @@ export default function Weather(props) {
             </ul>
           </div>
         </div>
-        <WeatherForecast size={100} coordinates={weatherData.coordinates} />
+        <WeatherForecast coordinates={weatherData.coordinates} />
       </div>
     );
   } else {
