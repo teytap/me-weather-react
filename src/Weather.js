@@ -4,7 +4,9 @@ import NewDate from "./NewDate";
 import WeatherIcon from "./WeatherIcon";
 import WeatherTemperature from "./WeatherTemperature";
 import WeatherForecast from "./WeatherForecast";
-//import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faWind } from "@fortawesome/free-solid-svg-icons";
+import { faDroplet } from "@fortawesome/free-solid-svg-icons";
 
 import "./Weather.css";
 
@@ -45,7 +47,7 @@ export default function Weather(props) {
       <div className="Weather">
         <form onSubmit={submitCity}>
           <div className="row">
-            <div className="col-6">
+            <div className="col-9">
               <input
                 type="search"
                 placeholder="Type a city.."
@@ -56,12 +58,9 @@ export default function Weather(props) {
             <div className="col-3">
               <input
                 type="submit"
-                value="Seach"
+                value="Search"
                 class="btn btn-primary w-100"
               ></input>
-            </div>
-            <div className="col-3">
-              <button className="btn btn-primary w-100">Current</button>
             </div>
           </div>
         </form>
@@ -91,11 +90,18 @@ export default function Weather(props) {
 
           <div className="col-6">
             <ul>
-              <li>Humidity:{weatherData.humidity}%</li>
-              <li>Wind:{weatherData.wind}km/h</li>
+              <li>
+                <FontAwesomeIcon icon={faDroplet} /> Humidity:{"  "}
+                {weatherData.humidity} %
+              </li>
+              <li>
+                <FontAwesomeIcon icon={faWind} />
+                {"  "}Wind: {weatherData.wind} km/h
+              </li>
             </ul>
           </div>
         </div>
+        <hr />
         <WeatherForecast coordinates={weatherData.coordinates} />
       </div>
     );

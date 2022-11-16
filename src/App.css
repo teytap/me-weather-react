@@ -1,6 +1,6 @@
 .App {
   max-width: 800px;
-  margin: 30px auto;
+  margin: 24px auto;
   color: white;
 }
 .App footer {
@@ -12,7 +12,11 @@ body {
   background-repeat: no-repeat;
 }
 .brand {
-  color: rgb(27, 134, 248);
+  color: rgb(38, 135, 239);
+  font-weight: bold;
+}
+.brand-cloud {
+  color: #b2e8f2;
 }
 .App a {
   text-decoration: none;

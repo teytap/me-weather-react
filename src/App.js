@@ -1,11 +1,16 @@
 import "./App.css";
 import Weather from "./Weather";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCloud } from "@fortawesome/free-solid-svg-icons";
 
 function App() {
   return (
     <div className="App">
       <div className="container">
-        <h1 className="brand">me-weather🌥</h1>
+        <h1 className="brand">
+          me-weather
+          <FontAwesomeIcon icon={faCloud} className="brand-cloud" />
+        </h1>
         <Weather city="Ankara" />
 
         <footer>

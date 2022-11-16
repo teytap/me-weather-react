@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faClockRotateLeft } from "@fortawesome/free-solid-svg-icons";
 export default function NewDate(props) {
   let days = [
     "Sunday",
@@ -20,7 +22,8 @@ export default function NewDate(props) {
   }
   return (
     <div>
-      {day} {hours}:{minutes}{" "}
+      {day} {hours}:{minutes}
+      {"  "} <FontAwesomeIcon icon={faClockRotateLeft} />
     </div>
   );
 }
