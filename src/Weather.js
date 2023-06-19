@@ -14,6 +14,7 @@ import "./Weather.css";
 export default function Weather(props) {
   let [weatherData, setWeatherData] = useState(null);
   let [city, setCity] = useState(props.city);
+  let [unit, setUnit] = useState("metric");
   let [ready, setReady] = useState(false);
 
   function showWeather(response) {
@@ -33,7 +34,7 @@ export default function Weather(props) {
   }
   function searchCityWeather() {
     let apiKey = "1223d92fc1f5a88dccf0859beb3b3425";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
     axios.get(apiUrl).then(showWeather);
   }
   function submitCity(event) {
@@ -52,7 +53,7 @@ export default function Weather(props) {
               <input
                 type="search"
                 placeholder="Type a city.."
-                class="form-control"
+                className="form-control"
                 onChange={changeCity}
               ></input>
             </div>
@@ -60,7 +61,7 @@ export default function Weather(props) {
               <input
                 type="submit"
                 value="Search"
-                class="btn btn-primary w-100"
+                className="btn btn-primary w-100"
               ></input>
             </div>
           </div>
@@ -73,9 +74,9 @@ export default function Weather(props) {
           <li className="text-capitalize">{weatherData.description}</li>
         </ul>
         <div className="row mt-4 mb-3">
-          <div className="col-6">
+          <div className="col-sm-6">
             <div className="clearfix d-flex">
-              <div className="float-left">
+              <div className="float-sm-left">
                 <WeatherIcon
                   code={weatherData.icon}
                   alt={weatherData.description}
@@ -83,13 +84,13 @@ export default function Weather(props) {
                 />
               </div>
 
-              <div className="float-left">
+              <div className="float-sm-left">
                 <WeatherTemperature celcius={weatherData.temperature} />
               </div>
             </div>
           </div>
 
-          <div className="col-6">
+          <div className="col-sm-6">
             <ul>
               <li>
                 <FontAwesomeIcon icon={faDroplet} /> Humidity:{"  "}
@@ -97,7 +98,8 @@ export default function Weather(props) {
               </li>
               <li>
                 <FontAwesomeIcon icon={faWind} />
-                {"  "}Wind: {weatherData.wind} km/h
+                {"  "}Wind: {weatherData.wind}{" "}
+                {unit === "metric" ? "km/h" : "mph"}
               </li>
             </ul>
           </div>
@@ -112,12 +114,12 @@ export default function Weather(props) {
       <Oval
         height={60}
         width={60}
-        color="white"
+        color="#2687EF"
         wrapperStyle={{}}
         wrapperClass=""
         visible={true}
         ariaLabel="oval-loading"
-        secondaryColor="white"
+        secondaryColor="#B2E8F2"
         strokeWidth={4}
         strokeWidthSecondary={4}
       />

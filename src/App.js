@@ -14,7 +14,7 @@ function App() {
         <Weather city="Ankara" />
 
         <footer>
-          This project is coded bay Mehtap Tataroğlu and is{" "}
+          This project is coded by Mehtap Tataroğlu and is{" "}
           <a
             href="https://github.com/teytap/me-weather-react"
             target="_blank"

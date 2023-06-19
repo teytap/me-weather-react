@@ -29,9 +29,6 @@
 .Weather .unit {
   font-size: 16px;
   font-weight: 500;
-  position: relative;
-  top: -44px;
-  margin-left: 5px;
 }
 .btn-branding {
   background: #49a4b8;

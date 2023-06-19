@@ -12,7 +12,7 @@ export default function WeatherTemperature(props) {
   }
   if (unit === "celcius") {
     return (
-      <span className="WeatherTemperature">
+      <span className="WeatherTemperature d-flex">
         <span className="temperature">{Math.round(props.celcius)}</span>
         <span className="unit">
           <span className="celcius">°C</span> |
@@ -24,16 +24,16 @@ export default function WeatherTemperature(props) {
     );
   } else {
     return (
-      <span className="WeatherTemperature">
+      <span className="WeatherTemperature d-flex align-items-start">
         <span className="temperature">
           {Math.round((props.celcius * 9) / 5 + 32)}
         </span>
-        <span className="unit">
+        <div className="unit">
           <a href="/" className="celcius" onClick={showCelcius}>
             °C
           </a>{" "}
           |<span className="fahrenheit">°F</span>
-        </span>
+        </div>
       </span>
     );
   }
